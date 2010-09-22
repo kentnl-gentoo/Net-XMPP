@@ -1,6 +1,0 @@
-Build
-_build/
-blib/
-MYMETA.yml
-t/config/accounts.yml
-*.bak

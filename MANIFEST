@@ -43,3 +43,4 @@ t/rawxml.t
 t/roster.t
 t/srv.t
 LICENSE
+SIGNATURE    Added here by Module::Build
