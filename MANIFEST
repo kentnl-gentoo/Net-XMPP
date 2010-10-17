@@ -22,8 +22,6 @@ META.yml
 README
 stderr
 t/1_load.t
-t/2_client_jabberd1.4.t
-t/3_client_jabberd2.t
 t/get_time_stamp.test
 t/iq.t
 t/jid.t
