@@ -54,6 +54,8 @@ under the LGPL 2.1.
 use strict;
 use Carp;
 
+use Scalar::Util qw(weaken);
+
 use XML::Stream;
 use Net::XMPP::Debug;
 use Net::XMPP::Protocol;
@@ -88,7 +90,7 @@ sub init
     while($#_ >= 0) { $self->{ARGS}->{ lc(pop(@_)) } = pop(@_); }
 
     $self->{DEBUG} =
-        new Net::XMPP::Debug(level      => $self->_arg("debuglevel",-1),
+        Net::XMPP::Debug->new(level      => $self->_arg("debuglevel",-1),
                              file       => $self->_arg("debugfile","stdout"),
                              time       => $self->_arg("debugtime",0),
                              setdefault => 1,
@@ -105,8 +107,8 @@ sub init
     $self->{DISCONNECTED} = 0;
 
     $self->{STREAM} =
-        new XML::Stream(style      => "node",
-                        debugfh    => $self->{DEBUG}->GetHandle(),
+        XML::Stream->new(style      => "node",
+                        debugfh    => weaken $self->{DEBUG}->GetHandle(),
                         debuglevel => $self->{DEBUG}->GetLevel(),
                         debugtime  => $self->{DEBUG}->GetTime(),
                        );
@@ -114,6 +116,9 @@ sub init
     $self->{RCVDB}->{currentID} = 0;
 
     $self->InitCallbacks();
+
+    weaken $self->{STREAM};
+    weaken $self->{CB} if $self->{CB};
 
     return $self;
 }
