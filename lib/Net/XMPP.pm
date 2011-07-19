@@ -267,13 +267,14 @@ under the LGPL 2.1.
 
 =cut
 
-require 5.005;
+require 5.008;
 use strict;
+use warnings;
 use Time::Local;
 use POSIX;
 use vars qw( $AUTOLOAD $VERSION $PARSING );
 
-$VERSION = "1.02_03";
+$VERSION = "1.02_04";
 
 use XML::Stream;
 use Net::XMPP::Debug;
