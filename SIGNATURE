@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.61.
+signed via the Module::Signature module, version 0.73.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,16 +14,17 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 6d952bd3c0f1f7163ebf884001b53e704987fe07 Build.PL
-SHA1 391e0d983d512fd06b14547b42a52f8e9a97c159 CHANGES
-SHA1 03e6c1a092c3e4320194152ecf204f70887c1c22 LICENSE
-SHA1 b33fea4050f983e72b7bb6739574bddaae802270 MANIFEST
-SHA1 a6be4c06ec46f56ce567bac0a508ce3e580c5c69 META.yml
-SHA1 73962f6582eb684416f5c5e9ec4e4e84aa064463 Makefile.PL
+SHA1 228f29cd52d001a1a91193e99b78f387eb1dce75 Build.PL
+SHA1 0da7ec2cb4fe53c4c75db978350b2ff4511c970e CHANGES
+SHA1 e6382a2e4814837e0034b5b1fe6338d75068d7d8 LICENSE
+SHA1 9dce84efce5fa18537493b026406ba3f739c922d MANIFEST
+SHA1 0d5e6e899811326bf2b6dc5081654524bbdec094 META.json
+SHA1 3da9820d1ddd9d958d8e0aa3908f2105367cea88 META.yml
+SHA1 f6cdc9aca2ed3ed3025087acf96b8d24f89201fc Makefile.PL
 SHA1 8750c73e31da2ccc02eeaa8d1fcf422c6ad4a653 README
 SHA1 56395324555c66964ac300f097d53c7282d3f884 examples/client.pl
 SHA1 4b002e8a47b1bd44d23847d9a2d0e6b1c06b62de examples/client_xpath.pl
-SHA1 07341107488b07ca0c1e26af15072410615e1dfa lib/Net/XMPP.pm
+SHA1 bd9b65c7e8581fa81d850ed9567d31e038f00f80 lib/Net/XMPP.pm
 SHA1 20768db079f852d6161481455e7ccda70f746b7c lib/Net/XMPP/Client.pm
 SHA1 8e7431d2eb112107a3dcd70a2cabf43f7b9e84c8 lib/Net/XMPP/Connection.pm
 SHA1 047479b19cbf74d2ffead46ebdff4ec2e3e35598 lib/Net/XMPP/Debug.pm
@@ -54,14 +55,14 @@ SHA1 50688b8dbfd86affd8c51e039df302440a89c597 t/node2.xml
 SHA1 f2ce8c701b89f828a042359b1653afe8c36c752b t/packet_iqauth.t
 SHA1 ce91609b363af5b7bdcb7b283d1eec2a43c83e0c t/packet_iqroster.t
 SHA1 12072726e79263ce927989c778bf895b11344641 t/presence.t
-SHA1 697b31cb04c9cac8d2531b2349394fe9090ce9c8 t/query_xxxxx.test
+SHA1 5950e466154e233344d0d0c86a69dfa19f3957af t/query_xxxxx.test
 SHA1 e1c0f8a99820422f6447eae77520656640230083 t/rawxml.t
 SHA1 fa5ed330ecc053f017cc75fc648b51e139b03ff9 t/roster.t
 SHA1 21ab9a1fb1118bc7331bbae053fd479d47838cf2 t/srv.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.10 (GNU/Linux)
+Version: GnuPG v1
 
-iEYEARECAAYFAk4lt8AACgkQjJ7fFJrTQRfGSgCdF+K+YP4ZN36BDDAVxslgCEWc
-bOwAoL8kd8f4bXnMqYoZlFg3x90ATcQY
-=cM/l
+iEYEARECAAYFAlSSXsQACgkQjJ7fFJrTQRcbIQCgtgSafBRB6Q3t99OiBXtetZ78
+tFEAnRHDlWxiUsRU19S1U2oVF77hlT0A
+=oAUG
 -----END PGP SIGNATURE-----
