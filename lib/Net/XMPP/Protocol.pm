@@ -310,7 +310,7 @@ available tags to look for are
 <message/>, <presence/>, and
 <iq/>.  If a packet is received
 with an ID which is found in the
-registerd ID list (see RegisterID
+registered ID list (see RegisterID
 below) then it is not sent to
 these functions, instead it
 is inserted into a LIST and can
@@ -1051,7 +1051,7 @@ use strict;
 use warnings;
 
 use Carp;
-use Digest::SHA1;
+use Digest::SHA;
 use MIME::Base64;
 use Authen::SASL;
 
@@ -2175,12 +2175,12 @@ sub AuthIQAuth
     #--------------------------------------------------------------------------
     if ($authType eq "zerok")
     {
-        my $hashA = Digest::SHA1::sha1_hex(delete($args{password}));
-        $args{hash} = Digest::SHA1::sha1_hex($hashA.$token);
+        my $hashA = Digest::SHA::sha1_hex(delete($args{password}));
+        $args{hash} = Digest::SHA::sha1_hex($hashA.$token);
 
         for (1..$sequence)
         {
-            $args{hash} = Digest::SHA1::sha1_hex($args{hash});
+            $args{hash} = Digest::SHA::sha1_hex($args{hash});
         }
     }
 
@@ -2195,7 +2195,7 @@ sub AuthIQAuth
     if ($authType eq "digest")
     {
         my $password = delete($args{password});
-        $args{digest} = Digest::SHA1::sha1_hex($self->GetStreamID().$password);
+        $args{digest} = Digest::SHA::sha1_hex($self->GetStreamID().$password);
     }
 
     #--------------------------------------------------------------------------

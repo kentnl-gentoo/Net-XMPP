@@ -22,7 +22,7 @@ my $build = Module::Build->new(
 	requires => {
 		'perl'         => 'v5.8.0',
 		'Authen::SASL' => '2.12',
-		'Digest::SHA1' => '1.02',
+		'Digest::SHA'  => '0',
 		'XML::Stream'  => '1.23_07',
 		'Scalar::Util' => '0',
 	},
@@ -32,8 +32,8 @@ my $build = Module::Build->new(
 	create_makefile_pl => 'small',
 	meta_merge => {
 		'resources' => {
-			'bugtracker' => 'https://rt.cpan.org/Dist/Display.html?Queue=Net-XMPP',
-			'repository' => 'http://github.com/dap/Net-XMPP',
+			'bugtracker' => 'https://github.com/dap/Net-XMPP/issues',
+			'repository' => 'https://github.com/dap/Net-XMPP',
 		}
 	},
 );

@@ -155,7 +155,7 @@ sub run {
         }
 
         SKIP: {
-            skip "need GTALK$i = username:password", 1 if not $users[$i];
+            skip "need GTALK$i = username:password", 1 if not defined $users[$i];
 
             my ( $res, $msg ) = $conn[$i]->AuthSend(
                 username => $users[$i]{username},
