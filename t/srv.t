@@ -11,7 +11,6 @@ use Net::XMPP::Test::Utils qw/
 	get_auth_params
 	bare_jid
 /;
-use Try::Tiny;
 
 BEGIN { use_ok('Net::XMPP'); }
 
@@ -26,8 +25,8 @@ SKIP: {
 	my $my_full_jid = bare_jid( $test_account ) . '/' . $auth_params->{'resource'};
 
 	my $client = Net::XMPP::Client->new(
-		debuglevel => 2,
-		debug      => 'stderr',
+		debuglevel => 0,
+		debug      => 'stdout',
 	);
 
 	isa_ok( $client, 'Net::XMPP::Client');
@@ -38,12 +37,7 @@ SKIP: {
 		message   => \&onMessage,
 	);
 
-	try {
-		$client->Execute( %{$auth_params}, %{$conn_params} );
-	}
-	catch {
-		warn "caught error: $_"; # not $@
-	};
+	$client->Execute( %{$auth_params}, %{$conn_params} );
 
 	sub onConnect {
 		ok(1, 'Connected');
@@ -59,17 +53,15 @@ SKIP: {
 			subject => 'Test message',
 			body    => 'This is a test.'
 		);
-		print STDERR ">>> In onAuth; sent message to $my_full_jid\n";
 	}
 
 	# Check that the contents match what we sent above
 	sub onMessage {
-		print STDERR ">>> In onMessage\n";
 		my $sid = shift;
 		my $message = shift;
 
-		#return unless $my_full_jid
-		#	eq $message->GetFrom('jid')->GetJID('full');
+		return unless $my_full_jid
+			eq $message->GetFrom('jid')->GetJID('full');
 
 		is( $message->GetSubject(), 'Test message',    'Subject' );
 		is( $message->GetBody(),    'This is a test.', 'Body'    );
