@@ -37,4 +37,3 @@ t/packet_iqroster.t
 t/presence.t
 t/query_xxxxx.test
 t/rawxml.t
-t/roster.t
