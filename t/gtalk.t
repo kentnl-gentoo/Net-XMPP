@@ -2,7 +2,12 @@ use strict;
 use warnings;
 
 use Test::More;
-
+# https://github.com/dap/Net-XMPP/issues/11
+BEGIN {
+  if ($ENV{NO_NETWORK_TESTING}) {
+    Test::More->import(skip_all => "NO_NETWORK_TESTS set");
+  }
+}
 ######################## XML::Stream mocking starts
 #{
 #   package XML::Stream;

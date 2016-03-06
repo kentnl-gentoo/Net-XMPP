@@ -1,6 +1,14 @@
 use lib "t/lib";
-use Test::More tests=>75;
 
+BEGIN {
+  require Test::More;
+  if ($ENV{NO_NETWORK_TESTING}) {
+    Test::More->import(skip_all => "NO_NETWORK_TESTS set");
+  }
+  else {
+    Test::More->import( tests => 75 );
+  }
+}
 BEGIN{ use_ok( "Net::XMPP" ); }
 
 require "t/mytestlib.pl";

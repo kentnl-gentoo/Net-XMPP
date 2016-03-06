@@ -23,6 +23,7 @@ sub can_run_tests {
 }
 
 sub conn_is_available {
+	return if $ENV{NO_NETWORK_TESTING};
 	return online();
 }
 
