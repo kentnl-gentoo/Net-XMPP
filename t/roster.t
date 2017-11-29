@@ -11,7 +11,7 @@ BEGIN {
 }
 BEGIN{ use_ok( "Net::XMPP" ); }
 
-require "t/mytestlib.pl";
+require "./t/mytestlib.pl";
 
 my $debug = Net::XMPP::Debug->new(setdefault=>1,
                                  level=>-1,
